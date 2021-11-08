@@ -1,0 +1,60 @@
+<html>
+
+<head>
+	<title>Health Code Violations over Time</title>
+	<link rel="stylesheet" type="text/css" href="link_style.css">
+	<script type="text/javascript" src="connect.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<h1 style="font-size:60px;">Restaurant Hygiene Inspection Analysis in LA</h1>
+		</div>
+
+		<div id="trend" style="background-color: pink;">
+			<p style="font-size: 40px;">Health Code Violations over Time</p>
+		</div>
+
+		<div id="result" style="background-color:pink;float:left;height:500px;width:1100px">
+			<canvas id="diagram3" heigth="500px" width="1100px"></canvas>	
+		</div>
+
+		<div id="filters3" style="background-color:pink;float:right;height:500px;width:300px;">
+			<div id="year3_" style="float:left;height: 400px;width:100px;">
+				<p style="font-size: 20px;padding-left:10px;"> Year</p>
+				<form action="" style="padding-left:10px;">
+					<input type="checkbox" id="t3_y2016" name="year" value="2016">2016<br><br>
+					<input type="checkbox" id="t3_y2017" name="year" value="2017">2017<br><br>
+					<input type="checkbox" id="t3_y2018" name="year" value="2018">2018<br><br>
+					<input type="checkbox" id="t3_y2019" name="year" value="2019">2019<br><br>
+					<input type="checkbox" id="t3_y2020" name="year" value="2020">2020<br><br>
+					<input type="checkbox" id="t3_y2021" name="year" value="2021">2021<br><br>
+				</form>
+			</div>
+
+			<div id="city3_" style="float:right;height:400px;width:200px;">
+				<p style="font-size: 20px;padding-left:10px;">Violation Code</p>
+				<form action="" style="padding-left:10px;">
+					<input type="radio" id="t3_code1" name="code" value="F044">F044<br><br>
+					<input type="radio" id="t3_code2" name="code" value="F033">F033<br><br>
+					<input type="radio" id="t3_code3" name="code" value="F040">F040<br><br>
+					<input type="radio" id="t3_code4" name="code" value="F036">F036<br><br>
+					<input type="radio" id="t3_code5" name="code" value="F037">F037<br><br>
+					<input type="radio" id="t3_code6" name="code" value="Others">Others<br><br>
+				</form>
+			</div>
+
+			<div>
+				<button onclick="getResult_t3()" style="margin-left:110px;margin-top:40px;">Submit</button>
+			</div>
+		</div>
+
+		<div id="return" style="margin-top: 20px;">
+			<a href="trend_selection.html" style="font-size: 20px;float:right;background-color:none;color:black;">Return</a>
+		</div>
+	</div>
+</body>
+
+</html>

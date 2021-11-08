@@ -1,0 +1,44 @@
+<html>
+
+<head>
+	<title>The Percentage of Restaurants with Scores above 90</title>
+	<link rel="stylesheet" type="text/css" href="link_style.css">
+	<script type="text/javascript" src="connect.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="header">
+			<h1 style="font-size:60px;">Restaurant Hygiene Inspection Analysis in LA</h1>
+		</div>
+
+		<div id="trend" style="background-color: pink;">
+			<p style="font-size: 40px;">The Percentage of Restaurants with Scores above 90</p>
+		</div>
+
+		<div id="result5" style="background-color:pink;float:left;height:500px;width:1200px">
+			<canvas id="diagram5" heigth="500px" width="1200px"></canvas>	
+		</div>
+
+		<div id="filters5" style="background-color:pink;float:right;height:500px;width:200px;">
+			<p style="font-size: 30px;padding-left:10px;"> Year</p>
+			<form action="choose5" style="font-size:20px; padding-left:10px;">
+				<input type="checkbox" id="t5_y2016" name="year" value="2016">2016<br><br>
+				<input type="checkbox" id="t5_y2017" name="year" value="2017">2017<br><br>
+				<input type="checkbox" id="t5_y2018" name="year" value="2018">2018<br><br>
+				<input type="checkbox" id="t5_y2019" name="year" value="2019">2019<br><br>
+				<input type="checkbox" id="t5_y2020" name="year" value="2020">2020<br><br>
+				<input type="checkbox" id="t5_y2021" name="year" value="2021">2021<br><br>
+			</form>
+
+			<button onclick="getResult_t5()" style="padding-left: 10px";>Submit</button>
+		</div>
+
+		<div id="return" style="margin-top: 20px;">
+			<a href="trend_selection.html" style="font-size: 20px;float:right;background-color:none;color:black;">Return</a>
+		</div>
+	</div>
+</body>
+
+</html>
