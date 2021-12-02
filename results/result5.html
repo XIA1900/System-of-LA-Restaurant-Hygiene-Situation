@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>The Percentage of Restaurants with Scores above 90</title>
+        <!--<link rel="stylesheet" type="text/css" href="link_style.css">-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <style type="text/css">
+            a:link {
+                font-size: 30px;
+                color: black;
+                text-align: left;
+                text-decoration: none;
+            }
+    
+            a:visited {
+                font-size: 30px;
+                color: black;
+                text-align: left;
+                text-decoration: none;
+            }
+    
+            a:hover {
+                font-size: 30px;
+                color: #ef5e0f;
+                text-align: left;
+                text-decoration: none;
+            }
+            a:active {
+                font-size: 30px;
+            }
+    
+            body {
+                background-color: #F6F6F6;
+            }
+        </style>
+    </head>
+<body>
+
+</body>
+
+<div id="container">
+    <div id="header">
+        <h1 style="font-size:60px;">Restaurant Hygiene Inspection Analysis in LA</h1>
+    </div>
+
+    <div id="trend5">
+        <p style="font-size: 40px;">The Percentage of Restaurants with Scores above 90</p>
+    </div>
+
+    <div id="result5" style="float:left;height:500px;width:1200px">
+        <canvas id="diagram5" heigth="500px" width="1200px"></canvas>	
+        <script>  
+            const labels = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            const data = {
+                labels: labels,
+                datasets:[]
+            };
+	
+            const config = {
+                type: "bar",
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {position: "top"},
+                        title: {
+                            display: true,
+                            text: "The Percentage of Restaurants with Scores above 90"
+                        }
+                    }
+                }
+            };
+            
+            ctx = document.getElementById("diagram5").getContext("2d");
+            var mychart = new Chart(ctx, config);
+
+            var bgcolor = new Array(6);
+            var bdcolor = new Array(6);
+            var colors = ["rgb(154,190,175)", "rgb(146,181,207)","rgb(240,201,207)", "rgb(247,222,152)","rgb(193,178,163)","rgb(209,194,211)"];
+            for(var k=0; k<6; k++) {
+                bgcolor[k] = colors[k];
+                bdcolor[k] = colors[k];
+            }
+            var counts = new Array();
+            counts[0] = "<%= count0 %>";
+            counts[1] = "<%= count1 %>";
+            counts[2] = "<%= count2 %>";
+            counts[3] = "<%= count3 %>";
+            counts[4] = "<%= count4 %>";
+            counts[5] = "<%= count5 %>";
+            console.log(counts);
+                
+            for(var m=0; m<6; m++) {
+                if(counts[m].length > 0) {
+                    var count = counts[m];
+                    let str = count.split(',');
+                    var arr = new Array(12);
+                    var j, i=11;
+                    
+                    if(m!=5) {
+                        for(j=str.length-1; j>=0; j--) {
+                            arr[i] = str[j];
+                            i--;
+                        }
+                    }
+                    else {
+                        arr = str;
+                    }
+                    var year = 2016+m;
+                    const newDataset = {
+                        label: year,
+                        backgroundColor: bgcolor[m],
+                        borderColor: bdcolor[m],
+                        data: arr
+                    };
+                    mychart.data.datasets.push(newDataset);
+                    mychart.update();
+                }
+            }           
+            //没有2016的数据
+        </script>
+    </div>
+
+    <div id="result5" style="float:right;height:500px;width:190px">
+        <form action="http://127.0.0.1:8081/process_get5" method="POST">
+            <p style="font-size: 20px;"> Year</p>
+            <input type="checkbox" name="2016">2016<br><br>
+            <input type="checkbox" name="2017">2017<br><br>
+            <input type="checkbox" name="2018">2018<br><br>
+            <input type="checkbox" name="2019">2019<br><br>
+            <input type="checkbox" name="2020">2020<br><br>
+            <input type="checkbox" name="2021">2021<br><br>
+            <button style="padding-left: 10px";>Submit</button>
+        </form>
+    </div>
+    
+
+    <div id="return" style="margin-top: 20px;">
+        <a href="trend_selection.html" style="font-size: 20px;float:right;background-color:none;">Return</a>
+    </div>
+</div>
+</body>
+
+</html>
