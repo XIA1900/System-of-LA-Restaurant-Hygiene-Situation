@@ -22,9 +22,9 @@ app.get('/tuples.html', function(req, res) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             var query = "select sum(num_rows) from (select table_name,num_rows from user_tables where user_tables.table_name not in('INVENTORY_OTHERS','VIOLATION_OTHERS'))";
             var result = await connection.execute(query);
