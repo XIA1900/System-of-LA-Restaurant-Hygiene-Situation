@@ -94,9 +94,9 @@ app.post("/process_get1", function (req, res, next) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             for(var i=0; i<6; i++) {
                 if(y[i]) {
@@ -141,9 +141,9 @@ app.post("/process_get2", function (req, res, next) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             for(var i=0; i<5; i++) {
                 if(cities[i]) {
@@ -194,9 +194,9 @@ app.post("/process_get3", function (req, res, next) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             if(code != "Others" ) {
                 for(var i=0; i<6; i++) {
@@ -293,9 +293,9 @@ app.post("/process_get4", function (req, res, next) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             for(var i=0; i<6; i++) {
                 if(y[i]) {
@@ -340,9 +340,9 @@ app.post("/process_get5", function (req, res, next) {
         let connection;
         try {
             connection = await oracledb.getConnection({
-                user          : "zhangyinghuan",
-                password      : "A1vLfMQxVFbR5yLPLbv9JipB",
-                connectString : "oracle.cise.ufl.edu:1521/orcl"
+                user          : "",
+                password      : "",
+                connectString : ""
             });
             for(var i=0; i<6; i++) {
                 if(y[i]) {
